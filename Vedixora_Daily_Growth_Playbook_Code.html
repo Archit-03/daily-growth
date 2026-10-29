@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vedixora | Founder Growth Playbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070A14;--card:#0F1526;--card2:#131A30;--line:rgba(140,155,255,.14);--txt:#E9EDF8;--mut:#8D96B3;--ind:#6D4CFF;--lime:#B6FF3C;--amber:#FBBF24;--rose:#FB7185;--emer:#34D399}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(900px 500px at 85% -10%,rgba(109,76,255,.22),transparent 70%),var(--bg);color:var(--txt);font-family:'Plus Jakarta Sans',system-ui,sans-serif;min-height:100vh;padding:20px;line-height:1.5}
+.mono{font-family:'JetBrains Mono',monospace}
+.wrap{max-width:1280px;margin:0 auto}
+button,input,textarea,select{font-family:inherit;font-size:14px;color:var(--txt)}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:38px;width:auto}
+.mark{width:42px;height:42px;border-radius:12px;background:conic-gradient(from 200deg,#6D4CFF,#B6FF3C,#6D4CFF);display:grid;place-items:center;font-weight:800;color:#0b0f1e;font-size:20px}
+.brand b{font-size:19px;display:block;letter-spacing:-.02em}.brand small{color:var(--mut);font-size:13px}
+.top-r{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.chip{padding:8px 14px;border-radius:99px;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:600;white-space:nowrap}
+.clock{text-align:right}.clock b{font-size:22px;display:block;line-height:1.1}.clock small{color:var(--mut);font-size:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+.card h2{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);font-weight:700;margin-bottom:12px}
+.hero{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:14px;margin-bottom:14px}
+.now{background:linear-gradient(150deg,#1a1450,#0F1526 65%);border-color:rgba(182,255,60,.25)}
+.now .lbl{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--lime)}
+.now .lbl i{width:8px;height:8px;border-radius:50%;background:var(--lime);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.35;transform:scale(1.5)}}
+.now h3{font-size:24px;letter-spacing:-.02em;margin:6px 0 2px}.now .cd{font-size:34px;font-weight:600;color:#fff}
+.bar{height:7px;border-radius:7px;background:rgba(255,255,255,.08);overflow:hidden;margin:10px 0}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ind),var(--lime));border-radius:7px;transition:width .6s}
+.now ul{list-style:none;margin:8px 0;font-size:14px;color:#cdd3ea}.now li::before{content:"→ ";color:var(--lime)}
+.nxt{color:var(--mut);font-size:13px}
+.timer{display:flex;gap:8px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.timer .tm{font-size:22px;font-weight:600;min-width:74px}
+.btn{padding:8px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card2);font-weight:600;font-size:13px;transition:.2s}.btn:hover{border-color:var(--lime)}
+.btn.pri{background:var(--lime);color:#0b0f1e;border-color:var(--lime)}
+select.btn{padding:8px 10px}
+.ring{display:flex;align-items:center;gap:16px}
+.ring svg{width:108px;height:108px;flex:none;transform:rotate(-90deg)}.ring circle{fill:none;stroke-width:9}
+.ring .bg{stroke:rgba(255,255,255,.08)}.ring .fg{stroke:url(#g);stroke-linecap:round;transition:stroke-dashoffset .6s}
+.ring b{font-size:30px;display:block}.ring small{color:var(--mut);font-size:13px}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}.kv div{background:var(--card2);border-radius:12px;padding:10px 12px}.kv b{font-size:18px;display:block}.kv small{color:var(--mut);font-size:12px}
+.zones{display:grid;gap:8px}
+.z{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:8px 10px;border-radius:12px;background:var(--card2);font-size:13px}
+.z .dot{width:9px;height:9px;border-radius:50%;background:#475569}.z.on .dot{background:var(--emer);box-shadow:0 0 0 4px rgba(52,211,153,.18)}
+.z b{display:block;font-size:14px}.z small{color:var(--mut);font-size:12px}.z .tm2{font-weight:600;font-size:14px;text-align:right}.z em{display:block;font-style:normal;font-size:11px;color:var(--lime);text-align:right}
+.grid{display:grid;grid-template-columns:1fr 360px;gap:14px;align-items:start}
+.tl{display:grid;gap:12px}
+.tl-h{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:2px}
+.tl-h h2{margin:0}
+.blk{display:grid;grid-template-columns:86px 1fr;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px;border-left:4px solid var(--c);transition:.25s}
+.blk.now{background:linear-gradient(150deg,#1a1450,#0F1526 70%);box-shadow:0 0 0 1px rgba(182,255,60,.35),0 16px 40px -20px rgba(109,76,255,.6)}
+.blk.done{opacity:.62}.blk.break{background:var(--card2)}
+.rail{text-align:center}.rail b{display:block;font-size:15px}.rail span{display:block;color:var(--mut);font-size:12px}.rail em{display:inline-block;margin-top:6px;font-style:normal;font-size:12px;font-weight:700;color:var(--c)}
+.bh{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap}
+.bh h3{font-size:18px;letter-spacing:-.01em}
+.st{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,.07);color:var(--mut)}
+.blk.now .st{background:var(--lime);color:#0b0f1e}.blk.done .st{background:rgba(52,211,153,.15);color:var(--emer)}.blk.missed .st{background:rgba(251,191,36,.14);color:var(--amber)}
+.why{color:var(--mut);font-size:14px;margin:4px 0 10px}
+.blk ul{list-style:none;display:grid;gap:4px}
+.blk label{display:flex;align-items:center;gap:10px;padding:7px 8px;border-radius:10px;cursor:pointer;font-size:14.5px;transition:.15s}.blk label:hover{background:rgba(255,255,255,.04)}
+.blk input{appearance:none;width:20px;height:20px;border-radius:6px;border:2px solid #4b5578;flex:none;display:grid;place-items:center;cursor:pointer;transition:.15s}
+.blk input:checked{background:var(--lime);border-color:var(--lime)}.blk input:checked::after{content:"✓";color:#0b0f1e;font-size:13px;font-weight:800}
+.blk input:checked+span{text-decoration:line-through;color:var(--mut)}
+.blk label span{flex:1}.blk label em{font-style:normal;color:var(--mut);font-size:12px;font-family:'JetBrains Mono',monospace}
+.bf{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:10px;font-size:13px;color:var(--mut)}
+.side{display:grid;gap:14px}
+.side input[type=text],.side input[type=time],.side textarea,.side select{width:100%;padding:9px 11px;border-radius:10px;border:1px solid var(--line);background:var(--card2);margin-bottom:8px}
+.side textarea{resize:vertical;min-height:64px}
+.mood{display:flex;gap:6px;margin-bottom:8px}.mood button{flex:1;padding:8px 0;border-radius:10px;border:1px solid var(--line);background:var(--card2);font-size:19px}.mood button.on{border-color:var(--lime);background:rgba(182,255,60,.12)}
+.lab{font-size:13px;color:var(--mut);margin:4px 0}
+.week{display:grid;gap:6px;font-size:13.5px}.week div{display:grid;grid-template-columns:42px 1fr;gap:8px;padding:7px 10px;border-radius:10px}.week div.today{background:rgba(109,76,255,.2);outline:1px solid rgba(182,255,60,.35)}.week b{color:var(--lime)}.week span{color:#cdd3ea}
+.hist{display:flex;gap:6px;align-items:flex-end;height:60px;margin-top:10px}.hist i{flex:1;background:linear-gradient(var(--ind),#3b2a9e);border-radius:5px 5px 0 0;min-height:4px;position:relative}.hist i.t{background:linear-gradient(var(--lime),#7aa61f)}
+.cats{display:grid;gap:8px}.cat{display:grid;grid-template-columns:96px 1fr 44px;gap:8px;align-items:center;font-size:13px}.cat i{height:8px;border-radius:8px;background:var(--c);display:block}.cat span:last-child{color:var(--mut);text-align:right;font-size:12px}
+.rules{list-style:none;display:grid;gap:8px;font-size:13.5px}.rules b{color:var(--lime)}
+.targets{display:grid;grid-template-columns:1fr 1fr;gap:8px}.targets div{background:var(--card2);border-radius:12px;padding:10px;text-align:center}.targets b{font-size:18px;color:var(--lime);display:block}.targets small{color:var(--mut);font-size:12px}
+.mi{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;background:var(--card2);margin-bottom:6px;font-size:13.5px}.mi small{display:block;color:var(--amber);font-size:12px}
+.mi button{background:none;border:0;color:var(--mut);font-size:15px}
+.foot{margin:18px 0 6px;text-align:center;color:var(--mut);font-size:13px}.foot a{color:var(--lime);text-decoration:none;font-weight:600}
+.fx{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:50}.fx span{position:absolute;font-size:22px;animation:fly 1.3s ease-out forwards}
+@keyframes fly{from{opacity:1;transform:translate(0,0) scale(.6)}to{opacity:0;transform:translate(var(--x),var(--y)) scale(1.3) rotate(var(--r))}}
+@media(max-width:1000px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}}
+@media(max-width:560px){body{padding:12px}.blk{grid-template-columns:1fr}.rail{display:flex;gap:10px;align-items:center;text-align:left}.rail span::before{content:"– "}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="brand"><img id="logo" alt="Vedixora" hidden><span class="mark" id="mark">V</span><div><b>Vedixora</b><small>Founder Growth Playbook</small></div></div>
+  <div class="top-r"><span class="chip" id="streak">🔥 0-day streak</span><span class="chip" id="level">Lv 1 · Starter · 0 XP</span><div class="clock"><b class="mono" id="clock">--:--</b><small id="date"></small></div></div>
+</header>
+
+<section class="hero">
+  <article class="card now" id="nowCard">
+    <span class="lbl"><i></i><span id="nowLbl">NOW</span></span>
+    <h3 id="nowTitle">Loading…</h3>
+    <div class="cd mono" id="nowCd">--:--</div>
+    <div class="bar"><i id="nowBar"></i></div>
+    <ul id="nowTasks"></ul>
+    <div class="nxt" id="nowNext"></div>
+    <div class="timer">
+      <span class="tm mono" id="tm">25:00</span>
+      <button class="btn pri" id="tGo">Start focus</button><button class="btn" id="tReset">Reset</button>
+      <select class="btn" id="tLen" aria-label="Focus length"><option value="25">25 min</option><option value="45">45 min</option><option value="60">60 min</option></select>
+    </div>
+  </article>
+  <article class="card">
+    <h2>Today's progress</h2>
+    <div class="ring"><svg viewBox="0 0 120 120"><defs><linearGradient id="g"><stop offset="0" stop-color="#6D4CFF"/><stop offset="1" stop-color="#B6FF3C"/></linearGradient></defs><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" id="ringFg" cx="60" cy="60" r="52" stroke-dasharray="326.7" stroke-dashoffset="326.7"/></svg>
+      <div><b class="mono" id="pct">0%</b><small id="pctTxt">0 of 0 tasks</small></div></div>
+    <div class="kv"><div><b class="mono" id="kDone">0h</b><small>Focused time done</small></div><div><b class="mono" id="kXp">0</b><small>XP earned today</small></div><div><b class="mono" id="kBlk">0/0</b><small>Blocks complete</small></div><div><b class="mono" id="kLeft">0h</b><small>Time left today</small></div></div>
+  </article>
+  <article class="card">
+    <h2>Who is online now</h2>
+    <div class="zones" id="zones"></div>
+  </article>
+</section>
+
+<div class="grid">
+  <section class="tl" aria-label="Today's schedule">
+    <div class="tl-h"><h2>Today's schedule (IST)</h2><button class="btn" id="jump">Jump to now</button></div>
+    <div id="blocks" class="tl"></div>
+  </section>
+  <aside class="side">
+    <article class="card"><h2>Intention and energy</h2>
+      <input type="text" id="intent" placeholder="Today I will make progress on…" aria-label="Today's intention">
+      <div class="lab">Energy this morning</div><div class="mood" id="moodAm"></div>
+      <div class="lab">Energy this evening</div><div class="mood" id="moodPm"></div>
+      <div class="lab">Win of the day</div><textarea id="win" placeholder="What moved the needle today?"></textarea>
+    </article>
+    <article class="card"><h2>This week's rhythm</h2><div class="week" id="week"></div><div class="hist" id="hist" aria-label="Last 7 days completion"></div></article>
+    <article class="card"><h2>Where the time goes</h2><div class="cats" id="cats"></div></article>
+    <article class="card"><h2>Meetings and reminders</h2><div id="mlist"></div>
+      <input type="time" id="mt" value="15:00" aria-label="Meeting time"><input type="text" id="mn" placeholder="Meeting title" aria-label="Meeting title"><input type="text" id="mw" placeholder="With whom (optional)" aria-label="With whom">
+      <button class="btn pri" id="mAdd" style="width:100%">Add meeting</button>
+    </article>
+    <article class="card"><h2>Daily targets</h2><div class="targets"><div><b>20–30</b><small>LinkedIn requests</small></div><div><b>10–15</b><small>Follow-ups</small></div><div><b>15–20</b><small>Leads sourced</small></div><div><b>1</b><small>Post published</small></div></div></article>
+    <article class="card"><h2>Golden rules</h2><ul class="rules"><li><b>09:30–11:30 is sacred.</b> Outreach only, no meetings.</li><li><b>Reply to warm leads within 2 hours.</b></li><li><b>Log everything</b> in the tracker before 18:10.</li><li><b>Consistency beats intensity.</b> Sixty days fills the pipeline.</li></ul></article>
+  </aside>
+</div>
+<div class="foot">Powered by <a href="https://vedixora.com">Vedixora</a>. Built to grow, daily. Your progress is saved in this browser.</div>
+</div>
+<div class="fx" id="fx"></div>
+
+<script>
+/* Paste your logo here as a data URI (data:image/png;base64,...) to show it instead of the "V" mark. */
+const LOGO='';
+
+const CATS={plan:['Planning','#818CF8'],out:['Outreach','#22D3EE'],del:['Delivery','#A78BFA'],sal:['Sales and pipeline','#34D399'],con:['Content','#FBBF24'],rec:['Recharge','#94A3B8']};
+/* Each task has a minute budget. The budgets in a block add up to the block's length. */
+const BLOCKS=[
+ {id:'b1',s:'09:00',e:'09:30',c:'plan',i:'🎯',t:'Morning Command Center',why:'Start with clarity. The next eight hours run on three priorities.',rw:'Fresh coffee and two minutes of fresh air',k:[['Check Apollo: replies, bounces, opens',8],['Check LinkedIn inbox: accepts and messages',7],['Reply to warm leads (aim for under 2 hours)',10],["Set today's top 3 priorities",5]]},
+ {id:'b2',s:'09:30',e:'11:30',c:'out',i:'🚀',t:'LinkedIn + Apollo Power Block',why:'Protected revenue time. No meetings, no distractions. Every reply starts here.',rw:'A 15-minute walk with your favourite playlist',k:[['Send 20–30 LinkedIn connection requests',35],['Follow up 10–15 accepted connections',30],['Engage on 5 ICP posts: like and comment',20],['Review Apollo sequence and check bounces',15],['Add 10–15 new leads to the sequence',20]]},
+ {id:'b3',s:'11:30',e:'11:45',c:'rec',i:'☕',t:'Reset',why:'Short break so the next session starts sharp.',k:[['Stretch, drink water, step away from the screen',15]],br:1},
+ {id:'b4',s:'11:45',e:'13:30',c:'del',i:'🧠',t:'Client Delivery: Session 1',why:'Deep work. Phone on Do Not Disturb. This is where you build dashboards and automations.',rw:'Lunch you actually enjoy',k:[['Work on the active client project',75],['Build case-study material',20],['Send a client update if a milestone is hit',10]]},
+ {id:'b5',s:'13:30',e:'14:15',c:'rec',i:'🍽️',t:'Lunch + Walk',why:'Eat properly and move. It makes the afternoon calls better.',k:[['Eat away from screens',30],['Walk for 10 minutes',15]],br:1},
+ {id:'b6',s:'14:15',e:'15:45',c:'sal',i:'📞',t:'Calls, Demos + Proposals',why:'14:15–15:45 IST is the UK and Europe morning and the UAE early afternoon, so it is a good window for discovery calls.',rw:'Celebrate every call you booked',k:[['Discovery calls and demos',45],['Write and send proposals to warm leads',25],['48-hour nudge on pending proposals',10],['LinkedIn follow-ups to warm leads',10]]},
+ {id:'b7',s:'15:45',e:'16:00',c:'rec',i:'🫖',t:'Reset',why:'Breathe, hydrate, clear your head.',k:[['Short break: water, tea and a quick stretch',15]],br:1},
+ {id:'b8',s:'16:00',e:'17:30',c:'del',i:'⚙️',t:'Client Delivery: Session 2',why:'Continue deep work. No active project? Build Vedixora assets. Mon and Thu: batch-write your next two posts here.',rw:'Ten minutes of something just for fun',k:[['Client work, or build Vedixora assets and website',65],['Refine proposals, templates and case studies',25]]},
+ {id:'b9',s:'17:30',e:'18:10',c:'sal',i:'📊',t:'Pipeline Review + Lead Sourcing',why:"Tomorrow's calls come from today's sourcing.",rw:'Check off your pipeline wins',k:[['Log all activity in the Lead Tracker',10],['Export 15–20 new Apollo leads',10],['Research 5 high-value targets',15],['Check GoodFirms and inbound channels',5]]},
+ {id:'b10',s:'18:10',e:'18:50',c:'con',i:'✍️',t:'Content + Brand',why:'The US wakes up around 19:00 IST, so a post scheduled for 19:30 reaches them as they start their day.',rw:'Read something inspiring',k:[['Reply to all comments on your last post',10],['Comment on 3 SaaS influencer posts',10],["Schedule tomorrow's post for 19:30 IST",10],['Create one micro-content piece or read one SaaS article',10]]},
+ {id:'b11',s:'18:50',e:'19:15',c:'plan',i:'🔥',t:"Daily Wrap + Tomorrow's Plan",why:'Never end a day without knowing tomorrow. Then truly switch off.',rw:'Done. Dinner, music and rest. You earned it.',k:[["Review today's wins: what moved the needle?",8],['Set 3 non-negotiables for tomorrow',7],['Check weekly KPIs: emails, replies, calls',5],['Close the laptop. Recharge.',5]]}
+];
+const THEMES={Mon:['Mon','Launch the week: set weekly goals, batch-write 2 posts'],Tue:['Tue','Calls day: book most demos. Optional US evening slot'],Wed:['Wed','Delivery push: protect deep work, ship milestones'],Thu:['Thu','Content and proof: batch posts, build a case study'],Fri:['Fri','Close and review: proposals, follow-ups, weekly KPIs'],Sat:['Sat','Light day: inbox, learning, plan next week'],Sun:['Sun','Rest and recharge']};
+const ZONES=[['India','Asia/Kolkata'],['UAE','Asia/Dubai'],['UK','Europe/London'],['Europe','Europe/Berlin'],['USA East','America/New_York']];
+const LEVELS=[['Starter',0],['Builder',500],['Closer',2500],['Rainmaker',6000],['Founder Mode',12000]];
+const FACES=['😩','😕','😐','🙂','🤩'];
+
+const $=s=>document.querySelector(s);
+const mm=t=>{const[h,m]=t.split(':').map(Number);return h*60+m};
+const fmt=m=>{m=((m%1440)+1440)%1440;return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0')};
+const hrs=m=>(m/60).toFixed(m%60?1:0)+'h';
+function ist(d=new Date()){const p=Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Kolkata',hourCycle:'h23',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',weekday:'short'}).formatToParts(d).map(x=>[x.type,x.value]));return{key:`${p.year}-${p.month}-${p.day}`,min:+p.hour*60+ +p.minute,sec:+p.second,wd:p.weekday}}
+function offMin(tz,d){const p=Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:tz,hourCycle:'h23',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'}).formatToParts(d).map(x=>[x.type,x.value]));return Math.round((Date.UTC(p.year,p.month-1,p.day,p.hour,p.minute,p.second)-Math.floor(d.getTime()/1000)*1000)/60000)}
+
+/* ---------- storage ---------- */
+const K='vx.playbook.v2';let DB={};try{DB=JSON.parse(localStorage.getItem(K)||'{}')}catch(e){}DB.days=DB.days||{};
+let T=ist();
+const day=()=>DB.days[T.key]||(DB.days[T.key]={done:{},meet:[],am:0,pm:0,intent:'',win:'',pct:0,xp:0});
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(DB))}catch(e){}};
+
+/* ---------- build ---------- */
+const TASKS=BLOCKS.reduce((n,b)=>n+b.k.length,0);
+function build(){
+  $('#blocks').innerHTML=BLOCKS.map(b=>{const dur=mm(b.e)-mm(b.s),pl=b.k.reduce((a,x)=>a+x[1],0);
+    return `<article class="blk ${b.br?'break':''}" id="blk-${b.id}" style="--c:${CATS[b.c][1]}"><div class="rail"><b class="mono">${b.s}</b><span class="mono">${b.e}</span><em>${dur} min</em></div><div class="bd"><div class="bh"><h3>${b.i} ${b.t}</h3><span class="st" id="st-${b.id}">Upcoming</span></div><p class="why">${b.why}</p><ul>${b.k.map((x,i)=>`<li><label><input type="checkbox" data-id="${b.id}-${i}" data-b="${b.id}"><span>${x[0]}</span><em>${x[1]}m</em></label></li>`).join('')}</ul><div class="bf"><span>Time budget: ${pl}/${dur} min${pl===dur?' ✓':' ⚠'}</span>${b.rw?`<span>🎁 Reward: ${b.rw}</span>`:''}</div></div></article>`}).join('');
+  $('#week').innerHTML=Object.values(THEMES).map(t=>`<div data-wd="${t[0]}"><b>${t[0]}</b><span>${t[1]}</span></div>`).join('');
+  [['#moodAm','am'],['#moodPm','pm']].forEach(([s,k])=>{$(s).innerHTML=FACES.map((f,i)=>`<button data-k="${k}" data-v="${i+1}" aria-label="Energy ${i+1} of 5">${f}</button>`).join('')});
+  const mins={};BLOCKS.forEach(b=>mins[b.c]=(mins[b.c]||0)+(mm(b.e)-mm(b.s)));const tot=Object.values(mins).reduce((a,b)=>a+b,0);
+  $('#cats').innerHTML=Object.entries(CATS).map(([k,v])=>`<div class="cat" style="--c:${v[1]}"><span>${v[0]}</span><div><i style="width:${(mins[k]||0)/tot*100}%"></i></div><span class="mono">${hrs(mins[k]||0)}</span></div>`).join('');
+  if(LOGO){$('#logo').src=LOGO;$('#logo').hidden=false;$('#mark').hidden=true}
+}
+
+/* ---------- state to UI ---------- */
+const doneOf=b=>BLOCKS.find(x=>x.id===b).k.every((_,i)=>day().done[b+'-'+i]);
+function paint(){
+  const d=day();let n=0,xpT=0,blk=0,doneMin=0,planMin=0;
+  BLOCKS.forEach(b=>{let c=0;b.k.forEach((x,i)=>{const on=!!d.done[b.id+'-'+i];document.querySelector(`[data-id="${b.id}-${i}"]`).checked=on;planMin+=x[1];if(on){c++;n++;doneMin+=x[1]}});if(c===b.k.length)blk++;});
+  xpT=n*10+blk*30;const pct=Math.round(n/TASKS*100);d.pct=pct;d.xp=xpT;save();
+  $('#pct').textContent=pct+'%';$('#pctTxt').textContent=`${n} of ${TASKS} tasks`;$('#ringFg').style.strokeDashoffset=326.7*(1-pct/100);
+  $('#kDone').textContent=hrs(doneMin);$('#kXp').textContent=xpT;$('#kBlk').textContent=`${blk}/${BLOCKS.length}`;
+  const total=Object.values(DB.days).reduce((a,x)=>a+(x.xp||0),0);let lv=0;LEVELS.forEach((l,i)=>{if(total>=l[1])lv=i});
+  $('#level').textContent=`Lv ${lv+1} · ${LEVELS[lv][0]} · ${total} XP`;
+  let s=0,dt=new Date(Date.UTC(+T.key.slice(0,4),+T.key.slice(5,7)-1,+T.key.slice(8,10)));const kk=x=>x.toISOString().slice(0,10);
+  if(!((DB.days[kk(dt)]||{}).pct>=70))dt=new Date(dt-864e5);while((DB.days[kk(dt)]||{}).pct>=70){s++;dt=new Date(dt-864e5)}
+  $('#streak').textContent=`🔥 ${s}-day streak`;
+  $('#hist').innerHTML=Array.from({length:7},(_,i)=>{const x=new Date(Date.UTC(+T.key.slice(0,4),+T.key.slice(5,7)-1,+T.key.slice(8,10))-(6-i)*864e5);const p=(DB.days[kk(x)]||{}).pct||0;return `<i class="${i===6?'t':''}" style="height:${Math.max(p,6)}%" title="${kk(x)}: ${p}%"></i>`}).join('');
+  $('#intent').value=d.intent||'';$('#win').value=d.win||'';
+  document.querySelectorAll('.mood button').forEach(b=>b.classList.toggle('on',d[b.dataset.k]==b.dataset.v));
+  paintMeet();status();
+}
+function status(){
+  const now=T.min;let nextSet=false;
+  BLOCKS.forEach(b=>{const el=$('#blk-'+b.id),st=$('#st-'+b.id),s=mm(b.s),e=mm(b.e),dn=doneOf(b.id);
+    el.classList.remove('now','done','missed');let t='Upcoming';
+    if(dn){el.classList.add('done');t='Done ✓'}else if(now>=s&&now<e){el.classList.add('now');t='Now'}else if(now>=e){el.classList.add('missed');t='Catch up'}else if(!nextSet){t='Up next';nextSet=true}
+    st.textContent=t});
+  document.querySelectorAll('.week div').forEach(w=>w.classList.toggle('today',w.dataset.wd===T.wd));
+  const left=BLOCKS.reduce((a,b)=>a+(mm(b.e)>now?Math.min(mm(b.e)-mm(b.s),mm(b.e)-now):0),0);$('#kLeft').textContent=hrs(left);
+}
+
+/* ---------- live tick ---------- */
+function tick(){
+  const n=ist();if(n.key!==T.key){location.reload();return}T=n;
+  $('#clock').textContent=fmt(T.min)+':'+String(T.sec).padStart(2,'0');
+  $('#date').textContent=new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',timeZone:'Asia/Kolkata'})+' · IST';
+  const b=BLOCKS.find(x=>T.min>=mm(x.s)&&T.min<mm(x.e)),nx=BLOCKS.find(x=>mm(x.s)>T.min);
+  const set=(l,t,cd,pr,tasks,nt)=>{$('#nowLbl').textContent=l;$('#nowTitle').textContent=t;$('#nowCd').textContent=cd;$('#nowBar').style.width=pr+'%';$('#nowTasks').innerHTML=tasks.map(x=>`<li>${x}</li>`).join('');$('#nowNext').textContent=nt};
+  const hh=T.sec?0:0;
+  if(b){const end=mm(b.e)*60,cur=T.min*60+T.sec,left=end-cur,tot=(mm(b.e)-mm(b.s))*60;
+    const open=b.k.map((x,i)=>day().done[b.id+'-'+i]?null:x[0]).filter(Boolean).slice(0,3);
+    set('NOW · '+CATS[b.c][0].toUpperCase(),b.i+' '+b.t,fmt(Math.floor(left/60)).slice(-2)==='' ?'':String(Math.floor(left/60)).padStart(2,'0')+':'+String(left%60).padStart(2,'0')+' left',Math.round((1-left/tot)*100),open.length?open:['All tasks in this block are done. Take your reward!'],nx?`Next at ${nx.s}: ${nx.t}`:'Last block of the day');
+  }else if(nx){const w=mm(nx.s)*60-(T.min*60+T.sec);set('UP NEXT',nx.i+' '+nx.t,String(Math.floor(w/3600)).padStart(2,'0')+':'+String(Math.floor(w%3600/60)).padStart(2,'0')+':'+String(w%60).padStart(2,'0'),0,[nx.why],'Starts at '+nx.s+' IST')}
+  else set('DAY COMPLETE','🎉 Great work today','Rest',100,['Log your win of the day and set tomorrow\'s priorities.'],'See you tomorrow at 09:00');
+  if(T.sec%20===0)status();zones();
+}
+function zones(){const d=new Date();$('#zones').innerHTML=ZONES.map(([n,tz])=>{const o=offMin(tz,d),loc=((T.min-330+o)%1440+1440)%1440,wk=!['Sat','Sun'].includes(T.wd),on=wk&&loc>=540&&loc<1050;
+  const a=(540-o+330+1440)%1440,z=(1050-o+330+1440)%1440,inBlk=tz!=='Asia/Kolkata'&&((a<=mm('15:45')&&(a+510)%1440>=mm('14:15'))||(a>z&&mm('14:15')<z));
+  return `<div class="z ${on?'on':''}"><span class="dot"></span><div><b>${n}</b><small>Reach: ${fmt(a)}–${fmt(z)} IST</small></div><div><div class="tm2 mono">${fmt(loc)}</div>${tz==='Asia/Kolkata'?'':`<em>${(a<=mm('14:15')&&z>=mm('15:45')||(a>z&&z>=mm('15:45')))?'In your call block':'Outside call block'}</em>`}</div></div>`}).join('')}
+
+/* ---------- meetings ---------- */
+function paintMeet(){const m=day().meet.slice().sort((a,b)=>a.t.localeCompare(b.t));$('#mlist').innerHTML=m.length?m.map(x=>{const clash=mm(x.t)>=mm('09:30')&&mm(x.t)<mm('11:30');return `<div class="mi"><div><b class="mono">${x.t}</b> ${x.n}${x.w?` <span style="color:var(--mut)">with ${x.w}</span>`:''}${clash?'<small>⚠ Clashes with the protected outreach block</small>':''}</div><button data-del="${x.id}" aria-label="Delete meeting">✕</button></div>`}).join(''):'<div class="lab" style="margin-bottom:8px">No meetings yet.</div>'}
+function remind(m){if(!('Notification'in window))return;const[h,mi]=m.t.split(':').map(Number),now=new Date(),at=new Date();at.setHours(h,mi,0,0);const ms=at-now-300000;if(ms>0)setTimeout(()=>{if(Notification.permission==='granted')new Notification('📅 Meeting in 5 minutes',{body:m.n})},ms)}
+
+/* ---------- effects ---------- */
+function confetti(el){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;const r=el.getBoundingClientRect(),fx=$('#fx');for(let i=0;i<22;i++){const s=document.createElement('span');s.textContent=['🎉','✨','🚀','💎','⭐'][i%5];s.style.left=r.left+r.width/2+'px';s.style.top=r.top+20+'px';s.style.setProperty('--x',(Math.random()*420-210)+'px');s.style.setProperty('--y',(Math.random()*-260-40)+'px');s.style.setProperty('--r',(Math.random()*360)+'deg');fx.appendChild(s);setTimeout(()=>s.remove(),1400)}}
+function beep(){try{const a=new(window.AudioContext||window.webkitAudioContext)(),o=a.createOscillator(),g=a.createGain();o.frequency.value=880;g.gain.value=.08;o.connect(g);g.connect(a.destination);o.start();setTimeout(()=>{o.stop();a.close()},350)}catch(e){}}
+
+/* ---------- events ---------- */
+document.addEventListener('change',e=>{const c=e.target.closest('input[data-id]');if(!c)return;const d=day(),was=doneOf(c.dataset.b);if(c.checked)d.done[c.dataset.id]=true;else delete d.done[c.dataset.id];paint();if(!was&&doneOf(c.dataset.b)){confetti(c);const bl=BLOCKS.find(x=>x.id===c.dataset.b);if(bl.rw){/* keep it light: reward hint appears in the block footer */}}});
+document.addEventListener('click',e=>{
+  const m=e.target.closest('.mood button');if(m){day()[m.dataset.k]=+m.dataset.v;paint()}
+  const x=e.target.closest('[data-del]');if(x){day().meet=day().meet.filter(y=>String(y.id)!==x.dataset.del);paint()}
+});
+$('#intent').addEventListener('input',e=>{day().intent=e.target.value;save()});$('#win').addEventListener('input',e=>{day().win=e.target.value;save()});
+$('#mAdd').onclick=()=>{const n=$('#mn').value.trim();if(!n){$('#mn').focus();return}const m={id:Date.now(),t:$('#mt').value||'10:00',n,w:$('#mw').value.trim()};day().meet.push(m);$('#mn').value='';$('#mw').value='';if('Notification'in window&&Notification.permission==='default')Notification.requestPermission();remind(m);paint()};
+$('#jump').onclick=()=>{const b=BLOCKS.find(x=>T.min>=mm(x.s)&&T.min<mm(x.e))||BLOCKS.find(x=>mm(x.s)>T.min);if(b)$('#blk-'+b.id).scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'center'})};
+/* focus timer */
+let tLeft=1500,tRun=null;const tShow=()=>$('#tm').textContent=String(Math.floor(tLeft/60)).padStart(2,'0')+':'+String(tLeft%60).padStart(2,'0');
+$('#tLen').onchange=()=>{if(!tRun){tLeft=$('#tLen').value*60;tShow()}};
+$('#tGo').onclick=()=>{if(tRun){clearInterval(tRun);tRun=null;$('#tGo').textContent='Resume';return}$('#tGo').textContent='Pause';tRun=setInterval(()=>{tLeft--;tShow();document.title=`${$('#tm').textContent} · Focus`;if(tLeft<=0){clearInterval(tRun);tRun=null;beep();document.title='Vedixora | Founder Growth Playbook';$('#tGo').textContent='Start focus';tLeft=$('#tLen').value*60;tShow();confetti($('#tGo'))}},1000)};
+$('#tReset').onclick=()=>{clearInterval(tRun);tRun=null;tLeft=$('#tLen').value*60;tShow();$('#tGo').textContent='Start focus';document.title='Vedixora | Founder Growth Playbook'};
+
+build();paint();tick();setInterval(tick,1000);day().meet.forEach(remind);
+</script>
+</body>
+</html>
